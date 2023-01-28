@@ -19,7 +19,7 @@ $rows=$pdo->query('SELECT id FROM products')->fetchAll(PDO::FETCH_NUM);
 <div class="header">
 
 <div id="title">Product List</div>
-<div id="add-product-btn-cont"><div id="add-product-btn"><a href="addproduct.php">ADD</a></div></div>
+<div id="add-product-btn-cont"><div id="add-product-btn"><a href="add-product.php">ADD</a></div></div>
 <div id="delete-product-btn-cont"><a onclick="deletedb()" id="delete-product-btn">MASS DELETE</a></div>
 
 </div>
@@ -34,7 +34,7 @@ $rows=$pdo->query('SELECT id FROM products')->fetchAll(PDO::FETCH_NUM);
     $unique= $db->displayUnique($i[0]); 
     if(!$sku){continue;}else{
 echo '<div class="productdisplay">';
-echo '<input type="checkbox" name="chkbox" value="' . $i[0] . '"/>';
+echo '<input type="checkbox" class="delete-checkbox" name="chkbox" value="' . $i[0] . '"/>';
 echo '<div class="item">'; echo($sku[0]); echo '</div>';
 echo '<div class="item">'; echo($name[0]); echo '</div>';
 echo '<div class="item">'; echo($value[0]); echo '</div>';
