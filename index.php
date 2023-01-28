@@ -2,7 +2,7 @@
 require_once 'php/ini.php';
 require_once 'php/products.php';
 $db = new display($pdo);
-$rows=$pdo->query('SELECT id FROM products')->fetchAll(PDO::FETCH_NUM);
+$rows=$pdo->query('SELECT product_sku FROM products')->fetchAll(PDO::FETCH_NUM);
 ?>
 <!DOCTYPE html>
 <html>

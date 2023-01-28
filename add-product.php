@@ -21,24 +21,24 @@
 <hr />
 <form id="product_form" action="php/insert.php" method="post">
   <label for="sku" id="lsku">SKU:</label>
-  <input type="text" id="sku" name="sku"><br>
+  <input type="text" id="sku" name="sku" required><br>
   <label for="name" id="lname">Name:</label>
-  <input type="text" id="name" name="name"><br>
+  <input type="text" id="name" name="name" required><br>
   <label for="price" id="lprice">Price:</label>
-  <input type="number" id="price" name="price"><br>
+  <input type="number" id="price" name="price" required><br>
   <label for="selector" id="lselector">Product Type:</label>
   <select name="selector" id="selector">
         <option value="" selected></option>
-        <option value="DVD">Book</option>
-        <option value="Book">DVD</option>
+        <option value="DVD">DVD</option>
+        <option value="Book">Book</option>
         <option value="Furniture">Furniture</option>
       </select>
   <label for="book" id="lBook">Weight:</label>
-  <input type="number" id="Book" name="book"><br>
+  <input type="number" id="Book" name="book" required placeholder="Please, provide weight"><br>
   <label for="dvd" id="lDVD">Size:</label>
-  <input type="number" id="DVD" name="dvd"><br>
+  <input type="number" id="DVD" name="dvd" required placeholder="Please, provide size"><br>
   <label for="furniture" id="lFurniture">HxWxL:</label>
-  <input type="number" id="Furniture" name="furniture"><br>
+  <input type="text" id="Furniture" name="furniture" required placeholder="Please, provide dimensions"><br>
 </div>
 <hr />
 
