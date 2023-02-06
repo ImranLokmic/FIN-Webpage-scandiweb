@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2023 at 11:05 PM
+-- Generation Time: Jan 28, 2023 at 02:52 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -48,7 +48,7 @@ INSERT INTO `attributes` (`id`, `label`) VALUES
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `product_sku` varchar(11) NOT NULL,
+  `product_sku` varchar(255) NOT NULL,
   `product_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -58,8 +58,7 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `product_sku`, `product_type`) VALUES
 (1, '1A', 'Book'),
-(2, '2B', 'DVD'),
-(3, '3C', 'Furniture');
+(2, '2B', 'DVD');
 
 -- --------------------------------------------------------
 
@@ -69,7 +68,7 @@ INSERT INTO `products` (`id`, `product_sku`, `product_type`) VALUES
 
 CREATE TABLE `p_values` (
   `id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
+  `product_sku` varchar(255) NOT NULL,
   `att_id` int(11) NOT NULL,
   `product_value` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -78,17 +77,13 @@ CREATE TABLE `p_values` (
 -- Dumping data for table `p_values`
 --
 
-INSERT INTO `p_values` (`id`, `product_id`, `att_id`, `product_value`) VALUES
-(1, 1, 1, 'The Brothers Karamazov'),
-(2, 1, 2, '20'),
-(3, 1, 5, '1,3'),
-(4, 2, 1, 'The Big Short'),
-(5, 2, 2, '5'),
-(6, 2, 4, '30'),
-(7, 3, 1, 'IKEA Dresser'),
-(8, 3, 2, '45'),
-(9, 3, 6, '40x48x55'),
-(10, 0, 0, '');
+INSERT INTO `p_values` (`id`, `product_sku`, `att_id`, `product_value`) VALUES
+(1, '1A', 1, 'The Brothers Karamazov'),
+(2, '1A', 2, '20'),
+(3, '1A', 5, '1,3'),
+(4, '2B', 1, 'The Big Short'),
+(5, '2B', 2, '5'),
+(6, '2B', 4, '30');
 
 -- --------------------------------------------------------
 
@@ -153,13 +148,13 @@ ALTER TABLE `attributes`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `p_values`
 --
 ALTER TABLE `p_values`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `uniqueatt`

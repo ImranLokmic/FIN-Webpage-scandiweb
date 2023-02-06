@@ -13,7 +13,7 @@
 <div class="header">
 
 <div id="title">Product Add</div>
-<div id="add-product-btn-cont"><div id="add-product-btn"><a onclick="adding_db()">SAVE</a></div></div>
+<div id="add-product-btn-cont"><button id="Save" onclick="adding_db()" >Save</button></div>
 <div id="delete-product-btn-cont"><a href="index.php">CANCEL</a></div>
 
 </div>
@@ -25,20 +25,25 @@
   <label for="name" id="lname">Name:</label>
   <input type="text" id="name" name="name" required><br>
   <label for="price" id="lprice">Price:</label>
-  <input type="number" id="price" name="price" required><br>
+  <input type="number" id="price" name="price" min="0" required><br>
   <label for="selector" id="lselector">Product Type:</label>
-  <select name="selector" id="selector">
+  <select name="productType" id="productType">
         <option value="" selected></option>
-        <option value="DVD">DVD</option>
-        <option value="Book">Book</option>
-        <option value="Furniture">Furniture</option>
+        <option value="size">DVD</option>
+        <option value="weight">Book</option>
+        <option value="furniture">Furniture</option>
       </select>
-  <label for="book" id="lBook">Weight:</label>
-  <input type="number" id="Book" name="book" required placeholder="Please, provide weight"><br>
-  <label for="dvd" id="lDVD">Size:</label>
-  <input type="number" id="DVD" name="dvd" required placeholder="Please, provide size"><br>
-  <label for="furniture" id="lFurniture">HxWxL:</label>
-  <input type="text" id="Furniture" name="furniture" required placeholder="Please, provide dimensions"><br>
+  <label for="book" id="lweight">Weight:</label>
+  <input type="number" id="weight" name="book" min="0" required placeholder="Please, provide weight"><br>
+  <label for="dvd" id="lsize">Size:</label>
+  <input type="number" id="size" name="dvd" min="0" required placeholder="Please, provide size"><br>
+
+  <label for="height" id="lheight" >Height:</label>
+  <input type="number" id="height" name="height" min="0" required placeholder="Please, provide height" ><br>
+  <label for="width" id="lwidth" >Width:</label>
+  <input type="number" id="width" name="width" min="0" required placeholder="Please, provide width" ><br>
+  <label for="length" id="llength" >Length:</label>
+  <input type="number" id="length" name="length" min="0" required placeholder="Please, provide length" ><br>
 </div>
 <hr />
 

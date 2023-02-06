@@ -1,30 +1,42 @@
 <?php
 
-class display{
-
+abstract class display{
     function __construct($pdo)
-        {
-            $this->pdo = $pdo;
-        }
-    public function displaySKU($sku)
+    {
+        $this->pdo = $pdo;
+    }
+    abstract public function display($sku);
+}
+
+class SKU extends display{
+    public function display($sku)
     {    
         $query = $this->pdo->prepare("SELECT products.product_sku FROM products WHERE product_sku='".$sku."'");
         $query->execute();
         return $query->fetch();
     }	
-    public function displayName($sku)
+
+}
+class Name extends display{
+    public function display($sku)
     {    
         $query = $this->pdo->prepare("SELECT product_value FROM p_values WHERE att_id=1 AND product_sku='".$sku."'");
         $query->execute();
         return $query->fetch();
     }	
-    public function displayValue($sku)
+
+}
+class Value extends display{
+    public function display($sku)
     {    
         $query = $this->pdo->prepare("SELECT product_value FROM p_values WHERE att_id=2 AND product_sku='".$sku."'");
         $query->execute();
         return $query->fetch();
     }	
-    public function displayUnique($sku)
+}
+
+class Unique extends display{
+    public function display($sku)
     {    
         $query = $this->pdo->prepare("SELECT product_value FROM p_values
             INNER JOIN products ON p_values.product_sku = products.product_sku
@@ -33,5 +45,8 @@ class display{
         $query->execute();
         return $query->fetch();
     }	
+
 }
+
+
 ?>
