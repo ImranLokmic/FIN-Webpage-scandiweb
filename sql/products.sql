@@ -80,10 +80,10 @@ CREATE TABLE `p_values` (
 INSERT INTO `p_values` (`id`, `product_sku`, `att_id`, `product_value`) VALUES
 (1, '1A', 1, 'The Brothers Karamazov'),
 (2, '1A', 2, '20'),
-(3, '1A', 5, '1,3'),
+(3, '1A', 5, 'Weight: 1,3 KG'),
 (4, '2B', 1, 'The Big Short'),
 (5, '2B', 2, '5'),
-(6, '2B', 4, '30');
+(6, '2B', 4, 'Size: 30 MB');
 
 -- --------------------------------------------------------
 
